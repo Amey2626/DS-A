@@ -1,0 +1,43 @@
+Tutorial No:2
+
+Tutorial Title:Perform recursive binary search using C. 
+
+Name of Student: Amey Pandit
+Class: ET                     Div:3                        PRN No:B25ET1175                     Batch:B
+_________________________________________________
+Program :
+#include <stdio.h>
+void binarySearch(int arr[], int n, int key)
+{
+    int low = 0;
+    int high = n - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == key)
+        {
+            printf("Element found at %d",mid);
+            break;
+        }
+        else if (arr[mid] < key)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+}
+void main()
+{
+    int arr[] = {10, 20, 30, 40, 50, 60, 70};
+    int n = 7;
+    int key;
+
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+
+    binarySearch(arr, n, key);
+}
